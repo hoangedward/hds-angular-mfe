@@ -1,0 +1,38 @@
+Install nvm (Node version manager)
+
+# Install node
+nvm install node
+# Use node
+# nvm use <version>
+
+# Create nx workspace
+npx create-nx-workspace@latest
+
+# Install nx
+npm install -g nx
+
+# Serve nx
+nx server <app_name>
+
+# Fix issue cannot use nx command in VSCode
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser (Powershell as administrator)
+
+# To use interface for nx, install Nx Console extensions
+
+# Generate application
+## Generate host
+nx g @nx/angular:host shell --remotes=shop,cart
+## Generate remote
+nx g @nx/angular:remote about --host=shell
+
+Relationship among host and remote is store in module-federation.config.ts of each application
+
+Routing:
+const config: ModuleFederationConfig = {
+  name: 'about',
+  exposes: {
+    './Routes': 'apps/about/src/app/remote-entry/entry.routes.ts',
+  },
+};
+# Remote app about exposes it's routes
+
