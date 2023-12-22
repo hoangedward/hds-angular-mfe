@@ -27,12 +27,35 @@ nx g @nx/angular:remote about --host=shell
 
 Relationship among host and remote is store in module-federation.config.ts of each application
 
-Routing:
+# Routing:
+## Remote app about exposes its routes in module-federation.config.ts
 const config: ModuleFederationConfig = {
   name: 'about',
   exposes: {
     './Routes': 'apps/about/src/app/remote-entry/entry.routes.ts',
   },
 };
-# Remote app about exposes it's routes
+## the tsconfig.base.json in root directory defind the path to about/shop routes.ts
+"paths": {
+      "about/Routes": ["apps/about/src/app/remote-entry/entry.routes.ts"],
+      "shop/Routes": ["apps/shop/src/app/remote-entry/entry.routes.ts"]
+}
+## The Shell app then load it in app.routes.ts
+export const appRoutes: Route[] = [
+  {
+    path: 'about',
+    loadChildren: () => import('about/Routes').then((m) => m.remoteRoutes),
+  },
+  {
+    path: 'shop',
+    loadChildren: () => import('shop/Routes').then((m) => m.remoteRoutes),
+  },
+  {
+    path: '',
+    component: NxWelcomeComponent,
+  },
+];
+
+
+
 
