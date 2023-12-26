@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../dist/out-tsc",
+    "declaration": true,
+    "declarationMap": true,
+    "inlineSources": true,
+    "types": []
+  },
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/test-setup.ts",
+    "jest.config.ts",
+    "src/**/*.test.ts"
+  ],
+  "include": ["src/**/*.ts", "../../../apps/shell/src/app/modules/store/app-store.module.ts", "../../../apps/shell/src/app/modules/store/app-store.reducer.ts", "../../../apps/shell/src/app/modules/store/app-store.state.ts"]
+}
