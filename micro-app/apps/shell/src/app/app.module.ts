@@ -4,6 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppStoreModule } from './modules/store';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -12,11 +18,15 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     AppStoreModule,
-    // Please ensure that this module below is the last importing module
-    // LoginModule
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatIconModule,
+    MatButtonModule,
   ],
   declarations: [
-    AppComponent
+    AppComponent,
+    HomePageComponent
   ],
   bootstrap: [AppComponent],
 })

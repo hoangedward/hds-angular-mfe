@@ -1,0 +1,31 @@
+<div class="row custom-lib-template">
+  <ng-container *ngIf="!hideLabel">
+  <div class="{{columLabel || 'col-4'}}">
+      <label for="{{ngControl.name}}" attr.aria-label="{{'label' + ariaLabel}}" *ngIf="label"
+      class="col-form-label">{{label}}
+        <ng-container *ngIf="isRequired">
+          *
+        </ng-container> :</label>
+      <div class="{{columLabel}}" *ngIf="!label"></div>
+  </div>
+</ng-container>
+  <div class="{{columInput || 'col-8'}}">
+    <ng-container *ngIf="ngControl">
+      <mat-form-field appearance="outline" style="width: 100%;">
+        <input
+        style="caret-color: black;"
+        id="{{ngControl.name}}"
+            matInput
+            [attr.aria-label]="ariaLabel"
+            [formControl]="$any(ngControl.control)"
+            [class.is-invalid]="ngControl.invalid"
+            maxlength={{maxLength}}
+            minlength={{minLength}}
+            type={{typeInput}}
+            placeholder={{placeHolder}}
+            (change)="execChangeInput($event)">
+            <mat-icon (click)="clickIconInput($event)" style="cursor: pointer; font-weight: 900;" *ngIf="iconInput" matSuffix>{{iconInput}}</mat-icon>
+          </mat-form-field>
+    </ng-container>
+  </div>
+</div>
