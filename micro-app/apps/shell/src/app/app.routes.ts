@@ -17,11 +17,11 @@ export const appRoutes: Routes = [
 },
   {
     path: 'user-management',
-    loadChildren: () => import('user-management/Routes').then((m) => m.remoteRoutes),
-    // loadChildren: () =>
-    //   loadRemoteModule('user-management', './Routes').then(
-    //     (m) => m.remoteRoutes
-    //   ),
+    // loadChildren: () => import('user-management/Routes').then((m) => m.remoteRoutes),
+    loadChildren: () =>
+      loadRemoteModule('user-management', './Routes').then(
+        (m) => m.remoteRoutes
+      ),
     canActivate: [AdminAuthGuard],
     canLoad: [AdminAuthGuard],
   },
