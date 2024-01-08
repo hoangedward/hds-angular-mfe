@@ -27,7 +27,7 @@ class AuthGuard {
             if (authenticated) {
                 return true;
             } else {
-                this.router.navigate(['login'])
+                this.router.navigate(['sign-in'])
                 return false;
             }
         }));

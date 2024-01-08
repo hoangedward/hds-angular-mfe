@@ -1,4 +1,3 @@
 {
-  "login": "http://localhost:4201/login",
   "user-management": "http://localhost:4205"
 }

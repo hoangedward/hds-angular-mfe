@@ -11,20 +11,23 @@ export const appRoutes: Routes = [
     children: [
         {
           path: 'sign-in',
-          loadChildren: () => import('user-management/Signin'),
-        },
+          loadChildren: () =>
+                loadRemoteModule('user-management', './Module').then(
+                  (m) => m.RemoteEntryModule
+                ),
+          },
     ]
 },
-  {
-    path: 'user-management',
-    // loadChildren: () => import('user-management/Routes').then((m) => m.remoteRoutes),
-    loadChildren: () =>
-      loadRemoteModule('user-management', './Routes').then(
-        (m) => m.remoteRoutes
-      ),
-    canActivate: [AdminAuthGuard],
-    canLoad: [AdminAuthGuard],
-  },
+  // {
+  //   path: 'user-management',
+  //   // loadChildren: () => import('user-management/Routes').then((m) => m.remoteRoutes),
+  //   loadChildren: () =>
+  //     loadRemoteModule('user-management', './Routes').then(
+  //       (m) => m.remoteRoutes
+  //     ),
+  //   canActivate: [AdminAuthGuard],
+  //   canLoad: [AdminAuthGuard],
+  // },
   {
     path: 'product',
     loadChildren: () => import('product/Routes').then((m) => m.remoteRoutes),
