@@ -1,9 +1,5 @@
 @use '@angular/material' as mat;
 
-@import "~tailwindcss/base.css";
-@import "~tailwindcss/components.css";
-@import "~tailwindcss/utilities.css";
-
 /* You can add global styles to this file, and also import other style files */
 // Plus imports for other components in your app.
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';

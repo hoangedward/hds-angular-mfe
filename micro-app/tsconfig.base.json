@@ -17,6 +17,7 @@
     "paths": {
       "@environments/*": ["apps/shell/src/environments/*"],
       "@micro-app/app-store": ["libs/store/app-store/src/index.ts"],
+      "@micro-app/auth": ["libs/shared/auth/src/index.ts"],
       "@micro-app/core": ["libs/shared/core/src/index.ts"],
       "@micro-app/data-access": ["libs/shared/data-access/src/index.ts"],
       "@micro-app/ui": ["libs/shared/ui/src/index.ts"],

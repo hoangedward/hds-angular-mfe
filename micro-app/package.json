@@ -25,6 +25,8 @@
     "@ngrx/router-store": "~17.0.0",
     "@ngrx/store": "~17.0.0",
     "@nx/angular": "17.2.7",
+    "keycloak-angular": "^15.0.0",
+    "keycloak-js": "^22.0.5",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.0"
@@ -70,7 +72,7 @@
     "nx": "17.2.7",
     "postcss": "^8.4.5",
     "prettier": "^2.6.2",
-    "tailwindcss": "^3.0.2",
+    "tailwindcss": "^3.4.1",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.2.2"
