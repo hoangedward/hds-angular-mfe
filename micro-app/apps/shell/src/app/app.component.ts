@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { AuthenStoreFacade } from '@micro-app/app-store';
 import { Observable } from 'rxjs';
 // import { RouterModule } from '@angular/router';
 // import { NxWelcomeComponent } from './nx-welcome.component';
@@ -13,9 +12,7 @@ import { Observable } from 'rxjs';
 })
 export class AppComponent {
   title = 'shell';
-  isLoggedIn: Observable<boolean>;
-  constructor(private authenStoreFacade: AuthenStoreFacade) {
-    this.isLoggedIn = this.authenStoreFacade.isLogin$;
+  constructor() {
   }
 
 }

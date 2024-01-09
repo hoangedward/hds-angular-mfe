@@ -21,10 +21,6 @@
       "@micro-app/core": ["libs/shared/core/src/index.ts"],
       "@micro-app/data-access": ["libs/shared/data-access/src/index.ts"],
       "@micro-app/ui": ["libs/shared/ui/src/index.ts"],
-      "cart/Routes": ["apps/cart/src/app/remote-entry/entry.routes.ts"],
-      "login/Routes": ["apps/login/src/app/remote-entry/entry.routes.ts"],
-      "product/Routes": ["apps/product/src/app/remote-entry/entry.routes.ts"],
-      "shop/Routes": ["apps/shop/src/app/remote-entry/entry.routes.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

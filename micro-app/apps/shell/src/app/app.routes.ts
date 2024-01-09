@@ -14,31 +14,11 @@ export const appRoutes: Routes = [
       )
   },
   {
-    path: 'product',
-    loadChildren: () => import('product/Routes').then((m) => m.remoteRoutes),
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard],
-    data: { roles: ['Admin'] },
-  },
-  {
     path: 'home',
     // loadChildren: () => import('product/Routes').then((m) => m.remoteRoutes),
     component: HomePageComponent,
     canActivate: [AuthGuard],
     canLoad: [AuthGuard],
     data: { roles: ['Admin', 'default-roles-sag'] }
-  },
-  {
-    path: 'cart',
-    loadChildren: () => import('cart/Routes').then((m) => m.remoteRoutes),
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard],
-    data: { roles: ['Admin'] }
-  },
-  {
-    path: 'shop',
-    loadChildren: () => import('shop/Routes').then((m) => m.remoteRoutes),
-    canActivate: [AuthGuard],
-    canLoad: [AuthGuard],
   },
 ];

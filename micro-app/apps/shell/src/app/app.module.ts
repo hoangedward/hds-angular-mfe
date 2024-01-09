@@ -36,7 +36,6 @@ function initializeKeycloak(keycloak: KeycloakService) {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    KeycloakAngularModule,
     BrowserAnimationsModule,
     AppStoreModule,
     MatGridListModule,
@@ -44,6 +43,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
+    KeycloakAngularModule,
   ],
   bootstrap: [AppComponent],
   providers: [
